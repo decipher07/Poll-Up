@@ -1,0 +1,3 @@
+#Don't Track Contents Of the Folder
+node_modules/
+*.vscode
