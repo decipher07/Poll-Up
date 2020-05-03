@@ -20,12 +20,22 @@ form.addEventListener('submit', async (e) => {
     e.preventDefault();
 });
 
+fetch('http://localhost:3000/poll')
+    .then(res => res.json())
+    .then(data => {
+        const votes = data.votes;
+        const totalVotes = votes.length ;
+        
+        const voteCounts = votes.reduce( (acc, vote) => ((acc[vote.os] = (acc[vote.os] || 0) + parseInt(vote.points)), acc), {});
+
+        console.log(`voteCounts are ${voteCounts}`)
+
 let dataPoints = [
-    {label: 'Ubuntu', y: 0},
-    {label: 'Mint', y: 0},
-    {label: 'Manjaro', y: 0},
-    {label: 'Kali', y: 0},
-    {label: 'Other', y: 0}
+    {label: 'Ubuntu', y: voteCounts.Ubuntu},
+    {label: 'Mint', y: voteCounts.Mint},
+    {label: 'Manjaro', y: voteCounts.Manjaro},
+    {label: 'Kali', y: voteCounts.Kali},
+    {label: 'Other', y: voteCounts.Other}
 ];
 
 const chartContainer = document.querySelector('#chartContainer');
@@ -35,7 +45,7 @@ if (chartContainer){
         animationEnabled: true,
         theme: 'theme1',
         title: {
-            text: 'Distro Results'
+            text: `Total Votes ${totalVotes}`
         },
         data :[
             {
@@ -67,3 +77,5 @@ if (chartContainer){
     });
     
 }
+    });
+

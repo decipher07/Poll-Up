@@ -15,24 +15,30 @@ const pusher = new Pusher({
   });
 
 router.get('/', async (req, res) => {
-    res.send('POLL')
+    const retrieved = await voteModel.find();
+    if (!retrieved)
+        res.send('Dhol Baache Baache');
+    
+    res.json({success: true, votes: retrieved});
 });
 
 router.post('/', async (req, res) => {
 
-    const newVote = new voteModel({
-        os: req.body.os,
-        points: 1
-    });
+    const newVote = {
+        os: req.body.os, 
+        points: 1 
+    }
 
-    await newVote.save();
+    new voteModel(newVote).save().then(vote => {
 
     pusher.trigger('os-poll', 'os-event', {
-        points: parseInt(newVote.points),
+        points: parseInt(vote.points),
         os: req.body.os 
     });
 
     return res.json({success: true, message: 'Thank You For Voting'});
+
+    })
 
 })
 
