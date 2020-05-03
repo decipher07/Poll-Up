@@ -3,9 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>PusherPoll</title>
 </head>
 <body>
-    <h1>OS Vote</h1>
+    <div class="container">
+        <h1>OS Vote</h1>
+        <p>Vote For Your Favourite Distro to Develop On</p>
+        <form id="vote-form">
+            <p>
+                <input type="radio" name="os" id="ubuntu" value="Ubuntu">
+                <label for="ubuntu">Ubuntu</label>
+            </p>
+            <p>
+                <input type="radio" name="os" id="mint" value="Mint">
+                <label for="mint">Linux-Mint</label>
+            </p>
+            <p>
+                <input type="radio" name="os" id="manjaro" value="Manjaro">
+                <label for="manjaro">Manjaro</label>
+            </p>
+            <p>
+                <input type="radio" name="os" id="kali" value="Kali">
+                <label for="kali">Kali</label>
+            </p>
+            <p>
+                <input type="radio" name="os" id="other" value="Other">
+                <label for="other">Other</label>
+            </p>
+            <input type="submit" value="Vote" class="btn">
+        </form>
+    </div>
+    <script
+  src="https://code.jquery.com/jquery-3.5.0.js"
+  integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
+  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
