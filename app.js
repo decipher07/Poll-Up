@@ -6,6 +6,10 @@ const port = 3000
 
 const app = express();
 
+// Set Up Database
+require('./database/mongoose')
+
+
 const poll = require('./routers/poll');
 
 // Set Public Folder 

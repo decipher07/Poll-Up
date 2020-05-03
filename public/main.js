@@ -54,8 +54,16 @@ if (chartContainer){
     });
     
     var channel = pusher.subscribe('os-poll');
-    channel.bind('os-vote', function(data) {
-          alert(JSON.stringify(data));
+    channel.bind('os-event', function(data) {
+          dataPoints = dataPoints.map( x => {
+              if (x.label == data.os){
+                  x.y += data.points;
+                  return x ;
+              } 
+              return x ;
+          });
+
+          chart.render();
     });
     
 }
