@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        [type="radio"]:not(:checked), [type="radio"]:checked {
+     position: relative; 
+     opacity: 1; 
+}
+    </style>
     <title>PusherPoll</title>
 </head>
 <body>
@@ -12,25 +18,37 @@
         <p>Vote For Your Favourite Distro to Develop On</p>
         <form id="vote-form">
             <p>
-                <input type="radio" name="os" id="ubuntu" value="Ubuntu">
+                <label>
+                <input name="os" id="ubuntu" value="Ubuntu" type="radio">
                 <label for="ubuntu">Ubuntu</label>
+                </label>
             </p>
             <p>
+                <label>
                 <input type="radio" name="os" id="mint" value="Mint">
                 <label for="mint">Linux-Mint</label>
+            </label>
             </p>
             <p>
+            <label>
                 <input type="radio" name="os" id="manjaro" value="Manjaro">
                 <label for="manjaro">Manjaro</label>
+            </label>
             </p>
             <p>
+                <label>
                 <input type="radio" name="os" id="kali" value="Kali">
                 <label for="kali">Kali</label>
+            </label>
             </p>
             <p>
+                <label>
                 <input type="radio" name="os" id="other" value="Other">
                 <label for="other">Other</label>
+                </label>
             </p>
+            
+              
             <input type="submit" value="Vote" class="btn">
         </form>
     </div>
