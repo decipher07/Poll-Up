@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
     <style>
         [type="radio"]:not(:checked), [type="radio"]:checked {
      position: relative; 
@@ -14,41 +17,42 @@
 </head>
 <body>
     <div class="container">
-        <h1>OS Vote</h1>
-        <p>Vote For Your Favourite Distro to Develop On</p>
+        <h1>OS Vote   <i class="fas fa-poll"></i></h1>
+        <hr>
+        <p class="para">Vote For Your Favourite Distro to Develop On</p>
         <form id="vote-form">
             <p>
                 <label>
-                <input name="os" id="ubuntu" value="Ubuntu" type="radio">
-                <label for="ubuntu">Ubuntu</label>
+                <input name="os" id="ubuntu" value="Ubuntu" type="radio" class="btnn btn0">
+                <label for="ubuntu" class="lbl">Ubuntu</label>
                 </label>
             </p>
             <p>
                 <label>
-                <input type="radio" name="os" id="mint" value="Mint">
-                <label for="mint">Linux-Mint</label>
+                <input type="radio" name="os" id="mint" value="Mint" class="btnn btn1">
+                <label for="mint" class="lbl">Linux-Mint</label>
             </label>
             </p>
             <p>
             <label>
-                <input type="radio" name="os" id="manjaro" value="Manjaro">
-                <label for="manjaro">Manjaro</label>
+                <input type="radio" name="os" id="manjaro" value="Manjaro" class="btnn btn2">
+                <label for="manjaro" class="lbl">Manjaro</label>
             </label>
             </p>
             <p>
                 <label>
-                <input type="radio" name="os" id="kali" value="Kali">
-                <label for="kali">Kali</label>
+                <input type="radio" name="os" id="kali" value="Kali" class="btnn btn3">
+                <label for="kali" class="lbl">Kali</label>
             </label>
             </p>
             <p>
                 <label>
-                <input type="radio" name="os" id="other" value="Other">
-                <label for="other">Other</label>
+                <input type="radio" name="os" id="other" value="Other" class="btnn btn4">
+                <label for="other" class="lbl">Other</label>
                 </label>
             </p>
             
-            <input type="submit" value="Vote" class="btn">
+            <input type="submit" value="Vote" class="btn" >
         
             <br>
             <br>
